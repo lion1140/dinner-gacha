@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日の夜ご飯ガチャ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🍽️ 今日の夜ご飯ガチャ 🍽️</h1>
+        <p class="subtitle">何にしようか迷ったら、ボタンをポチッと押そう！</p>
+
+        <!-- ジャンル選択ボタンエリア -->
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">すべて</button>
+            <button class="filter-btn" data-category="japanese">和食</button>
+            <button class="filter-btn" data-category="western">洋食</button>
+            <button class="filter-btn" data-category="meat">お肉</button>
+            <button class="filter-btn" data-category="chinese">中華</button>
+        </div>
+
+        <!-- ガチャの結果が表示される場所 -->
+        <div id="result-box" class="result-box">
+            <div class="result-content">
+                <span id="result-text">今日のメニューは……？</span>
+                <p id="memo-text" class="memo-text">材料の代用アイデアがここに表示されます</p>
+            </div>
+        </div>
+
+        <!-- シェアボタン -->
+        <div class="share-area">
+            <a id="twitter-share" class="share-btn twitter-btn" href="#" target="_blank" rel="noopener noreferrer">𝕏 シェア</a>
+            <a id="line-share" class="share-btn line-btn" href="#" target="_blank" rel="noopener noreferrer">LINE 送信</a>
+        </div>
+
+        <!-- ガチャを回すボタン -->
+        <button id="gacha-btn" class="gacha-btn">ガチャを回す！</button>
+
+        <!-- メニュー管理を開閉するボタン（★ここを追加） -->
+        <div class="menu-control-area">
+            <button id="toggle-list-btn" class="sub-action-btn">📋 メニューの追加・編集・削除を開く</button>
+        </div>
+
+        <!-- メニュー管理パネル（初期は非表示） -->
+        <div id="admin-panel" class="admin-panel" style="display: none;">
+            <h3>➕ メニューの追加</h3>
+            <input type="text" id="new-name" placeholder="メニュー名（例：オムライス）">
+            <select id="new-category">
+                <option value="japanese">和食</option>
+                <option value="western">洋食</option>
+                <option value="meat">お肉</option>
+                <option value="chinese">中華</option>
+            </select>
+            <input type="text" id="new-memo" placeholder="一言メモ（例：ケチャップで代用OK）">
+            <button id="add-btn">メニューを追加する</button>
+
+            <h3 style="margin-top: 15px;">📋 登録メニュー一覧（編集・削除）</h3>
+            <div class="menu-list-container">
+                <ul id="menu-list">
+                    <!-- ここにJavaScriptでリストが並びます -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 編集用のポップアップ画面（モーダル） -->
+    <div id="edit-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>✏️ メニューの編集</h3>
+            <input type="text" id="edit-name" placeholder="メニュー名">
+            <select id="edit-category">
+                <option value="japanese">和食</option>
+                <option value="western">洋食</option>
+                <option value="meat">お肉</option>
+                <option value="chinese">中華</option>
+            </select>
+            <input type="text" id="edit-memo" placeholder="一言メモ">
+            <div class="modal-buttons">
+                <button id="save-edit-btn">保存する</button>
+                <button id="cancel-edit-btn">キャンセル</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

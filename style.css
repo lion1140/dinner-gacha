@@ -1,0 +1,351 @@
+/* 全体の基本設定 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f7f9f6;
+    color: #333333;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* メインのカードコンテナ */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* タイトル */
+h1 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+/* ジャンル選択ボタン */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #f1f2f6;
+    border: 1px solid #dcdde1;
+    color: #57606f;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    background-color: #e4e7eb;
+}
+
+.filter-btn.active {
+    background-color: #2f3640;
+    color: #ffffff;
+    border-color: #2f3640;
+    font-weight: 600;
+}
+
+/* ★結果が表示されるボックスのデザイン（ここが反映されていませんでした） */
+.result-box {
+    background-color: #fafbfc;
+    border: 2px dashed #dcdde1;
+    border-radius: 12px;
+    padding: 15px 10px;
+    margin-bottom: 12px;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.result-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+#result-text {
+    font-size: 1.15rem;
+    color: #2f3640;
+    font-weight: 600;
+}
+
+/* ★代行・アレンジメモのデザイン */
+.memo-text {
+    font-size: 0.75rem;
+    color: #e67e22;
+    background-color: #fdf5ec;
+    padding: 5px 8px;
+    border-radius: 6px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* シェアボタン */
+.share-area {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.share-btn {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    transition: opacity 0.2s;
+    box-sizing: border-box;
+}
+
+.share-btn:hover {
+    opacity: 0.85;
+}
+
+.twitter-btn {
+    background-color: #000000;
+}
+
+.line-btn {
+    background-color: #06c755;
+}
+
+/* ガチャを回すメインボタン */
+.gacha-btn {
+    background-color: #e67e22;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(230, 126, 34, 0.2);
+    transition: background-color 0.2s, transform 0.1s;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.gacha-btn:hover {
+    background-color: #d35400;
+}
+
+.gacha-btn:active {
+    transform: scale(0.98);
+}
+
+.gacha-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    opacity: 0.8;
+}
+
+/* リスト開閉ボタンのデザイン */
+.menu-control-area {
+    margin-bottom: 15px;
+}
+
+.sub-action-btn {
+    background-color: #718093;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.sub-action-btn:hover {
+    background-color: #2f3640;
+}
+
+/* メニュー管理パネルのデザイン */
+.admin-panel {
+    background-color: #f1f2f6;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.admin-panel h3 {
+    font-size: 0.85rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #2f3640;
+}
+
+.admin-panel input,
+.admin-panel select {
+    width: 100%;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 0.85rem;
+}
+
+#add-btn {
+    background-color: #2ed573;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    background-color: #26af5f;
+}
+
+/* 登録メニュー一覧のスクロール枠 */
+.menu-list-container {
+    background-color: #ffffff;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    padding: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 8px;
+}
+
+#menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #f1f2f6;
+    font-size: 0.85rem;
+}
+
+.item-buttons button {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+    margin-left: 3px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-action-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.delete-action-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* 編集モーダル（ポップアップ） */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 85%;
+    max-width: 350px;
+    text-align: left;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #2f3640;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#save-edit-btn {
+    background-color: #2ed573;
+    color: white;
+    border: none;
+    padding: 8px;
+    flex: 1;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cancel-edit-btn {
+    background-color: #a4b0be;
+    color: white;
+    border: none;
+    padding: 8px;
+    flex: 1;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
